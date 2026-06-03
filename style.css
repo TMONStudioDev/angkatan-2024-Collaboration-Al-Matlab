@@ -1,3 +1,16 @@
 #judul {
     text-align: center;
 }
+#navigasi{
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    background-color: yellow;
+    text-align: center;
+}
+.tombolnav{
+    height: 30;
+    width: 60;
+    background-color: rgb(255, 246, 122);
+    text-align: center;
+}
