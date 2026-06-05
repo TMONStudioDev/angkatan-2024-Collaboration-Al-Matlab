@@ -1,16 +1,64 @@
-#judul {
+main{
+    background-color: #69c7ce;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    border-radius: 5%;
+}
+body{
+    background: linear-gradient(to bottom, rgba(0, 26, 255, 0.753), rgba(255, 238, 0, 0.753));
+    min-height: 100vh;
+}
+header{
     text-align: center;
 }
-#navigasi{
-    display: inline-block;
-    height: 50px;
+.page-1{
+    background-color: rgb(196, 255, 255);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20%;
+    padding: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+hr{
+    height: 3px;
+    background-color: aqua;
+    border-color: aqua;
+    padding: px;
+}
+#tentang{
+    float: right;
+    margin-top: -10px;
+}
+.tomboltombol{
+    background-color: rgb(105, 250, 255);
+    height: 150px;
     width: 100%;
-    background-color: yellow;
-    text-align: center;
+    border-radius: 10%;
+    display: flex;
+    align-items: start;
+    justify-content: left;
 }
-.tombolnav{
-    height: 30;
-    width: 60;
-    background-color: rgb(255, 246, 122);
-    text-align: center;
+*{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button1{
+    display: inline;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 204, 255);
+    border: none;
+    border-radius: 10%;
+    margin-top: 20px;
+    margin-bottom: 50%;
+}
+#judul-member{
+    margin-top: -20px;
+}
+.list-nama{
+    text-align: left;
 }
