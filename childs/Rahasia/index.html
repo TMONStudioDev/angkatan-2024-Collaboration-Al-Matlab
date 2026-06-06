@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahasia</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <div class="page-1">
+        <form id="passwordForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Masuk</button>
+    </form>
+    </div>
+    <script>
+        // 1. Tentukan password dan link tujuan di sini
+        const PASSWORD_BENAR = "rahasia123";
+        const LINK_TUJUAN = "https://google.com";
+
+        // 2. Tangkap elemen form dan pesan error
+        const form = document.getElementById('passwordForm');
+        const inputPassword = document.getElementById('password');
+        const pesanError = document.getElementById('pesanError');
+
+        // 3. Jalankan fungsi saat tombol submit diklik
+        form.addEventListener('submit', function(event) {
+            // Mencegah halaman reload otomatis
+            event.preventDefault(); 
+
+            // Ambil text yang diketik pengguna
+            const passwordInput = inputPassword.value;
+
+            // 4. Validasi password
+            if (passwordInput === PASSWORD_BENAR) {
+                pesanError.style.display = 'none';
+                // Alihkan ke link tujuan
+                window.location.href = LINK_TUJUAN; 
+            } else {
+                // Tampilkan pesan error jika salah
+                pesanError.style.display = 'block';
+                inputPassword.value = ''; // Kosongkan input kembali
+            }
+        });
+    </script>
+
+</body>
+</html>
