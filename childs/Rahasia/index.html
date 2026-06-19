@@ -13,37 +13,38 @@
         <input type="password" id="password" required>
         <button type="submit">Masuk</button>
     </form>
+    <div style="display: none;" id="textrahasia">
+        <p>Untuk Sintya Widya Yang Cantik, Sang pujaan hati ku</p>
     </div>
-    <script>
-        // 1. Tentukan password dan link tujuan di sini
-        const PASSWORD_BENAR = "rahasia123";
-        const LINK_TUJUAN = "https://google.com";
+    <p id="pesanError"></p>
+    </div>
+    
+<script>
+    const form = document.getElementById('passwordForm');
+    const passwordInput = document.getElementById('password');
+    const password1 = "adekksyng";
+    // Ambil elemen div rahasia dan pesan error
+    const kontenRahasia = document.getElementById('textrahasia');
+    const pesanError = document.getElementById('pesanError');
 
-        // 2. Tangkap elemen form dan pesan error
-        const form = document.getElementById('passwordForm');
-        const inputPassword = document.getElementById('password');
-        const pesanError = document.getElementById('pesanError');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Tahan reload halaman
+        
+        const passwordValue = passwordInput.value;
 
-        // 3. Jalankan fungsi saat tombol submit diklik
-        form.addEventListener('submit', function(event) {
-            // Mencegah halaman reload otomatis
-            event.preventDefault(); 
-
-            // Ambil text yang diketik pengguna
-            const passwordInput = inputPassword.value;
-
-            // 4. Validasi password
-            if (passwordInput === PASSWORD_BENAR) {
-                pesanError.style.display = 'none';
-                // Alihkan ke link tujuan
-                window.location.href = LINK_TUJUAN; 
-            } else {
-                // Tampilkan pesan error jika salah
-                pesanError.style.display = 'block';
-                inputPassword.value = ''; // Kosongkan input kembali
-            }
-        });
-    </script>
+        if (passwordValue === password1) {
+            // 1. Munculkan div rahasia
+            kontenRahasia.style.display = "block";
+            
+            // 2. Bersihkan pesan error jika sebelumnya ada
+            pesanError.textContent = ""; 
+        } else {
+            // Jika salah, pastikan div tetap sembunyi dan munculkan error
+            kontenRahasia.style.display = "none";
+            pesanError.textContent = "❌ Password Salah!";
+        }
+    });
+</script>
 
 </body>
 </html>
